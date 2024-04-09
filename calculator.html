@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .key{
+            border: 0;  
+            background-color: coral;
+            padding: 10px;
+            border-radius: 1rem;
+            width: 80px;
+            height: 50px;
+            color: aliceblue;
+            font-size: 20px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body style="background-color: rgb(96, 65, 65);">
+    <div class="main  d-flex justify-content-center mt-5 rounded" style="height: 700px; width: 800px; margin-left: 270px;">
+        <div class="calc bg-dark mt-5 p-4 rounded" style="height: 600px; width: 500px;">
+            <div class="rounded  output w-80 bg-warning-subtle p-2 ">
+                <input class="rounded border border-0 mx-auto" type="text" style="height: 60px; width: 100%;" id="screen">
+            </div>
+            <div class="border rounded mt-2 p-3 ps-5" style="height: 450px;">
+                <input type="button" class="key" value="C" onclick="clearDisplay()">
+                <br><br>
+                <input type="button" class="key" value="1" onclick="buttonclick(1)">
+                <input type="button" class="key" value="2" onclick="buttonclick(2)">
+                <input type="button" class="key" value="3" onclick="buttonclick(3)">
+                <input type="button" class="key" value="+" onclick="buttonclick('+')">
+                <br><br>
+
+                <input type="button" class="key" value="4" onclick="buttonclick(4)">
+                <input type="button" class="key" value="5" onclick="buttonclick(5)">
+                <input type="button" class="key" value="6" onclick="buttonclick(6)">
+                <input type="button" class="key" value="-" onclick="buttonclick('-')">
+                <br><br>
+
+                <input type="button" class="key" value="7" onclick="buttonclick(7)">
+                <input type="button" class="key" value="8" onclick="buttonclick(8)">
+                <input type="button" class="key" value="9" onclick="buttonclick(9)">
+                <input type="button" class="key" value="/" onclick="buttonclick('/')">
+                <br><br>
+
+                <input type="button" class="key" value="." onclick="buttonclick('.')">
+                <input type="button" class="key" value="0" onclick="buttonclick(0)">
+                <input type="button" class="key" value="=" onclick="equalclick()">
+                <input type="button" class="key" value="*" onclick="buttonclick('*')">
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function clearDisplay(){
+    document.getElementById("screen").value=""
+    }
+
+    function buttonclick(val){
+    document.getElementById("screen").value=document.getElementById("screen").value+val
+    }
+    function equalclick(){
+   let text=document.getElementById("screen").value
+   let result=eval(text)
+   document.getElementById("screen").value=result
+}
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
